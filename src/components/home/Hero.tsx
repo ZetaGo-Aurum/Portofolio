@@ -24,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
         
         {/* Character 2 - Top Right (Terakomari) */}
         <L2DPlaceholder 
-          image="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=2070&auto=format&fit=crop" 
+          image="/hero/Terakomari.Gandesblood.full.4048408.jpg" 
           name="Terakomari"
           delay={0.5}
           className="absolute top-[8%] right-[5%] w-[35vw] h-[25vh] md:top-[15%] md:right-[8%] md:w-[12vw] md:h-[35vh]"
@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
         
         {/* Character 3 - Bottom Left (Estella) */}
         <L2DPlaceholder 
-          image="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop" 
+          image="/hero/estella-pointing-at-the-camera-in-arknights-endfield.jpg" 
           name="Estella"
           delay={0.8}
           className="absolute bottom-[10%] left-[5%] w-[35vw] h-[25vh] md:bottom-[12%] md:left-[12%] md:w-[10vw] md:h-[40vh]"
@@ -40,7 +40,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
         
         {/* Character 4 - Bottom Right (Terakomari 2) */}
         <L2DPlaceholder 
-          image="https://images.unsplash.com/photo-1601850494422-3cf14624b0b3?q=80&w=2070&auto=format&fit=crop" 
+          image="/hero/wallpaperflare.com_wallpaper.jpg" 
           name="Terakomari"
           delay={1.1}
           className="absolute bottom-[10%] right-[5%] w-[35vw] h-[25vh] md:bottom-[15%] md:right-[15%] md:w-[14vw] md:h-[50vh]"
