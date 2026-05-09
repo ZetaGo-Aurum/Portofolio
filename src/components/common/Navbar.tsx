@@ -24,7 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentT, lang, setLang, scrolled }) =>
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 ${scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
         <div onClick={() => scrollTo('hero')} className="text-sm tracking-[0.2em] uppercase font-light cursor-pointer hover:text-white transition-colors">
           ZetaGo<span className="text-gold font-semibold">—Aurum</span>

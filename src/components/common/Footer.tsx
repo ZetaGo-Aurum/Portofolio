@@ -14,7 +14,7 @@ const Footer: React.FC<FooterProps> = ({ currentT }) => {
           Terminal Echo
         </div>
         <p className="text-[9px] md:text-[10px] tracking-[0.2em] text-gray-500 uppercase">
-          © 2026 Rayhan Dzaky Al Mubarok. {currentT.footer}
+          © 2026 ZetaGo-Aurum. {currentT.footer}
         </p>
         
         <div className="mt-12 flex justify-center gap-8">

@@ -20,7 +20,7 @@ const Carousel: React.FC<CarouselProps> = ({ projects }) => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-transparent">
