@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Portofolio
-My Portofilo
-=======
 # Rayhan Dzaky | Multidisciplinary Creator
 
 ![ZetaGo Aurum Showcase](https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=2070&auto=format&fit=crop)
@@ -35,4 +31,3 @@ This portfolio is optimized for deployment on **Vercel** and features full **Ind
 
 ---
 *Generated and optimized by ZetaGo-Aurum Framework.*
->>>>>>> 65b1fb4 (Refactor: portofolio stability and responsiveness fixes)
