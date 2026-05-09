@@ -23,6 +23,17 @@ const Navbar: React.FC<NavbarProps> = ({ currentT, lang, setLang, scrolled }) =>
     setIsMenuOpen(false);
   };
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   return (
     <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 ${scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -66,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentT, lang, setLang, scrolled }) =>
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-12 md:hidden"
+            className="fixed inset-0 z-[110] bg-black flex flex-col items-center justify-center gap-12 md:hidden"
           >
             {Object.entries(currentT.nav).map(([key, label]) => (
               <button 
