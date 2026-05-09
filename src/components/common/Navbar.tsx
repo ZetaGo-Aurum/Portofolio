@@ -48,8 +48,12 @@ const Navbar: React.FC<NavbarProps> = ({ currentT, lang, setLang, scrolled }) =>
             <button onClick={() => setLang('id')} className={`transition-colors ${lang === 'id' ? 'text-white font-medium' : 'text-gray-600 hover:text-gray-300'}`}>ID</button>
           </div>
           
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-gray-400 hover:text-white">
-            {isMenuOpen ? <X /> : <Menu />}
+          <button 
+            onClick={() => setIsMenuOpen(!isMenuOpen)} 
+            className="md:hidden p-2 -mr-2 text-gray-400 hover:text-white transition-colors z-[70] relative"
+            aria-label="Toggle Menu"
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>

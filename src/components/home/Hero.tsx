@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
         </div>
         
         <div className="lux-reveal">
-          <h1 className="text-[14vw] md:text-[10vw] font-cinzel leading-[0.8] mb-8 drop-shadow-2xl" style={{ transitionDelay: '0.4s' }}>
+          <h1 className="text-[11vw] md:text-[10vw] font-cinzel leading-[1.1] mb-8 drop-shadow-2xl" style={{ transitionDelay: '0.4s' }}>
             <span className="italic font-light text-gray-300">RAYHAN</span> <br/> 
             <span className="font-semibold tracking-tighter text-white">DZAKY</span>
           </h1>

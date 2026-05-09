@@ -8,11 +8,23 @@ const AudioPlayer: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const startExperience = () => {
+    if (!audioRef.current) return;
+    
     setShowOverlay(false);
     setIsPlaying(true);
-    if (audioRef.current) {
-      audioRef.current.play().catch(err => console.log("Autoplay blocked", err));
-    }
+    
+    // Use a small delay to ensure the overlay transition doesn't interfere with audio start
+    setTimeout(() => {
+      if (audioRef.current) {
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(err => {
+            console.error("Playback failed:", err);
+            setIsPlaying(false);
+          });
+        }
+      }
+    }, 100);
   };
 
   const toggleAudio = () => {

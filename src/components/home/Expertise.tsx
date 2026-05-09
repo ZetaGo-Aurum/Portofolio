@@ -18,7 +18,7 @@ const Expertise: React.FC<ExpertiseProps> = ({ currentT }) => {
   return (
     <section id="expertise" className="relative z-10 py-32 md:py-48 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-white/5">
       <div className="lux-reveal mb-24 text-center md:text-left">
-        <h2 className="text-5xl md:text-8xl font-cinzel text-stroke leading-tight uppercase">
+        <h2 className="text-4xl md:text-8xl font-cinzel text-stroke leading-tight uppercase">
           {currentT.expertiseTitle} <br/> 
           <i className="text-white normal-case font-light" style={{WebkitTextStroke: '0px'}}>{currentT.expertiseTitleItalic}</i>
         </h2>

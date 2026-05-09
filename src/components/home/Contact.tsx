@@ -16,7 +16,7 @@ const Contact: React.FC<ContactProps> = ({ currentT }) => {
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
         <div>
           <div className="lux-reveal">
-            <h2 className="text-6xl md:text-9xl font-cinzel mb-12 text-white drop-shadow-lg leading-none">
+            <h2 className="text-5xl md:text-9xl font-cinzel mb-12 text-white drop-shadow-lg leading-none">
               {currentT.contactTitle} <br/> 
               <i className="text-gray-500 font-light block mt-4">{currentT.contactTitleItalic}</i>
             </h2>
