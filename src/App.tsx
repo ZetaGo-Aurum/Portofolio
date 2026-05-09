@@ -22,29 +22,8 @@ export default function App() {
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
-    
-    // Intersection Observer for Reveal Animations
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-revealed');
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-    );
-
-    if (isInitialized) {
-      const elements = document.querySelectorAll('.lux-reveal');
-      elements.forEach((el) => observer.observe(el));
-    }
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      observer.disconnect();
-    };
-  }, [lang, isInitialized]);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div ref={containerRef} className="relative min-h-screen bg-black">

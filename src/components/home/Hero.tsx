@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
   const smoothY4 = useSpring(y4, { stiffness: 100, damping: 30 });
 
   // Strict 9:16 aspect ratio windows
-  const windowClass = "absolute aspect-[9/16] h-[45vh] md:h-[65vh] overflow-hidden rounded-sm border border-white/10 shadow-2xl bg-black/20 backdrop-blur-sm";
+  const windowClass = "absolute aspect-[9/16] h-[40vh] md:h-[65vh] overflow-hidden rounded-sm border border-white/10 shadow-2xl bg-black/20 backdrop-blur-sm";
 
   return (
     <section 
@@ -42,7 +42,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
         {/* Top Left Window */}
         <motion.div 
           style={{ y: smoothY1 }} 
-          className={`${windowClass} top-[8%] left-[-5%] md:top-[5%] md:left-[10%]`}
+          className={`${windowClass} top-[5%] left-[-15%] md:top-[5%] md:left-[10%]`}
         >
           <L2DPlaceholder 
             image="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1974&auto=format&fit=crop" 
@@ -55,7 +55,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
         {/* Top Right Window */}
         <motion.div 
           style={{ y: smoothY2 }} 
-          className={`${windowClass} top-[5%] right-[-5%] md:top-[10%] md:right-[10%]`}
+          className={`${windowClass} top-[2%] right-[-15%] md:top-[10%] md:right-[10%]`}
         >
           <L2DPlaceholder 
             image="/hero/Terakomari.Gandesblood.full.4048408.jpg" 
@@ -68,7 +68,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
         {/* Bottom Left Window */}
         <motion.div 
           style={{ y: smoothY3 }} 
-          className={`${windowClass} bottom-[5%] left-[-5%] md:bottom-[10%] md:left-[12%]`}
+          className={`${windowClass} bottom-[2%] left-[-15%] md:bottom-[10%] md:left-[12%]`}
         >
           <L2DPlaceholder 
             image="/hero/estella-pointing-at-the-camera-in-arknights-endfield.jpg" 
@@ -81,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
         {/* Bottom Right Window */}
         <motion.div 
           style={{ y: smoothY4 }} 
-          className={`${windowClass} bottom-[8%] right-[-5%] md:bottom-[5%] md:right-[12%]`}
+          className={`${windowClass} bottom-[5%] right-[-15%] md:bottom-[5%] md:right-[12%]`}
         >
           <L2DPlaceholder 
             image="/hero/wallpaperflare.com_wallpaper.jpg" 

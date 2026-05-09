@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { socials } from '../../content/socials';
 
@@ -14,8 +15,13 @@ const Contact: React.FC<ContactProps> = ({ currentT }) => {
   return (
     <section id="contact" className="relative z-10 py-32 md:py-48 px-6 md:px-12 border-t border-white/5 bg-black/40">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
-        <div>
-          <div className="lux-reveal">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div>
             <h2 className="text-5xl md:text-9xl font-cinzel mb-12 text-white drop-shadow-lg leading-none">
               {currentT.contactTitle} <br/> 
               <i className="text-gray-500 font-light block mt-4">{currentT.contactTitleItalic}</i>
@@ -25,24 +31,29 @@ const Contact: React.FC<ContactProps> = ({ currentT }) => {
             </p>
           </div>
           
-          <div className="mt-16 md:mt-24 lux-reveal">
+          <div className="mt-16 md:mt-24">
             <div className="text-[10px] tracking-[0.5em] text-gray-600 uppercase mb-8">System Status</div>
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
               <span className="text-xs tracking-widest text-gold uppercase">Operational // Ready for Connection</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <div className="flex flex-col justify-center">
           {socials.map((social: { name: string; label: string; url: string }, index: number) => (
-            <div key={social.name} className="lux-reveal">
+            <motion.div 
+              key={social.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            >
               <a 
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex justify-between items-center py-8 border-b border-white/10 hover:border-gold/50 transition-all duration-700"
-                style={{ transitionDelay: `${index * 0.1}s` }}
               >
                 <div>
                   <h4 className="text-2xl md:text-5xl font-light text-gray-400 group-hover:text-white transition-all duration-500">
@@ -56,7 +67,7 @@ const Contact: React.FC<ContactProps> = ({ currentT }) => {
                   <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-gray-500 group-hover:text-black transition-colors" />
                 </div>
               </a>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
