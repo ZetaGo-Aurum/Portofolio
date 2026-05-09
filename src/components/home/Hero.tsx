@@ -28,8 +28,8 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
   const smoothY4 = useSpring(y4, { stiffness: 100, damping: 30 });
 
   // Strict 9:16 aspect ratio windows
-  // Refined desktop height to prevent overlap with central text
-  const windowClass = "absolute aspect-[9/16] h-[35vh] md:h-[50vh] overflow-hidden rounded-sm border border-white/10 shadow-2xl bg-black/20 backdrop-blur-sm z-0";
+  // Removed borders and frames for a seamless, atmospheric look
+  const windowClass = "absolute aspect-[9/16] h-[40vh] md:h-[55vh] overflow-hidden z-0";
 
   return (
     <section 
@@ -39,12 +39,12 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
     >
       
       {/* Dynamic Background Windows in X-Shape */}
-      {/* Positions spread out further on desktop to prevent overlap with text */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-30 mix-blend-screen">
+      {/* Positions "berdekatan tapi pas" - closer to center but precisely clear of text */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-20 md:opacity-30 mix-blend-screen">
         {/* Top Left Window */}
         <motion.div 
           style={{ y: smoothY1 }} 
-          className={`${windowClass} top-[5%] left-[-5%] md:top-[10%] md:left-[5%]`}
+          className={`${windowClass} top-[12%] left-[8%] md:top-[12%] md:left-[8%]`}
         >
           <L2DPlaceholder 
             image="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1974&auto=format&fit=crop" 
@@ -57,7 +57,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
         {/* Top Right Window */}
         <motion.div 
           style={{ y: smoothY2 }} 
-          className={`${windowClass} top-[2%] right-[-5%] md:top-[15%] md:right-[5%]`}
+          className={`${windowClass} top-[15%] right-[8%] md:top-[18%] md:right-[10%]`}
         >
           <L2DPlaceholder 
             image="/hero/Terakomari.Gandesblood.full.4048408.jpg" 
@@ -70,7 +70,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
         {/* Bottom Left Window */}
         <motion.div 
           style={{ y: smoothY3 }} 
-          className={`${windowClass} bottom-[2%] left-[-5%] md:bottom-[15%] md:left-[8%]`}
+          className={`${windowClass} bottom-[18%] left-[8%] md:bottom-[20%] md:left-[12%]`}
         >
           <L2DPlaceholder 
             image="/hero/estella-pointing-at-the-camera-in-arknights-endfield.jpg" 
@@ -83,7 +83,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
         {/* Bottom Right Window */}
         <motion.div 
           style={{ y: smoothY4 }} 
-          className={`${windowClass} bottom-[5%] right-[-5%] md:bottom-[10%] md:right-[8%]`}
+          className={`${windowClass} bottom-[15%] right-[8%] md:bottom-[12%] md:right-[10%]`}
         >
           <L2DPlaceholder 
             image="/hero/wallpaperflare.com_wallpaper.jpg" 
@@ -112,7 +112,8 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h1 className="text-[12vw] md:text-[8vw] font-cinzel leading-[1.1] mb-8 drop-shadow-2xl">
+          {/* Slightly reduced font size for better framing */}
+          <h1 className="text-[10vw] md:text-[8vw] font-cinzel leading-[1.1] mb-8 drop-shadow-2xl">
             <span className="italic font-light text-gray-300">ZETAGO</span> <br/> 
             <span className="font-semibold tracking-tighter text-white">AURUM</span>
           </h1>

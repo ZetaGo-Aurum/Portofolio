@@ -34,7 +34,7 @@ const L2DPlaceholder: React.FC<L2DPlaceholderProps> = ({ image, name, delay = 0,
           delay: delay + 1
         }
       }}
-      className={`group cursor-pointer overflow-hidden rounded-sm border border-white/10 shadow-2xl ${className}`}
+      className={`group cursor-pointer overflow-hidden ${className}`}
     >
       <img 
         src={image} 
