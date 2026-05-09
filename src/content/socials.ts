@@ -3,5 +3,5 @@ export const socials = [
   { name: 'Telegram', label: '@kyokounerge', url: 'https://t.me/kyokounerge' },
   { name: 'TikTok', label: '@zetxe7', url: 'https://tiktok.com/@zetxe7' },
   { name: 'GitHub', label: 'ZetaGo-Aurum', url: 'https://github.com/ZetaGo-Aurum' },
-  { name: 'NPM', label: 'ZetaGo-Aurum', url: 'https://www.npmjs.com/~zetago-aurum' }
+  { name: 'NPM', label: 'zetagoaurum', url: 'https://www.npmjs.com/~zetagoaurum' }
 ];
