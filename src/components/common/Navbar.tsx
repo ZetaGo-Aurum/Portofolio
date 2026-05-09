@@ -35,48 +35,50 @@ const Navbar: React.FC<NavbarProps> = ({ currentT, lang, setLang, scrolled }) =>
   }, [isMenuOpen]);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 ${scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
-        <div onClick={() => scrollTo('hero')} className="text-sm tracking-[0.2em] uppercase font-light cursor-pointer hover:text-white transition-colors">
-          ZetaGo<span className="text-gold font-semibold">—Aurum</span>
-        </div>
-        
-        {/* Desktop Menu */}
-        <div className="hidden md:flex gap-10 text-xs tracking-[0.3em] uppercase text-gray-400">
-          {Object.entries(currentT.nav).map(([key, label]) => (
-            <button key={key} onClick={() => scrollTo(key)} className="hover:text-white transition-colors">
-              {label}
-            </button>
-          ))}
-        </div>
-
-        {/* Language & Menu Toggle */}
-        <div className="flex items-center gap-6">
-          <div className="hidden md:flex items-center gap-2 text-xs tracking-widest font-light">
-            <Globe className="w-4 h-4 text-gray-400" />
-            <button onClick={() => setLang('en')} className={`transition-colors ${lang === 'en' ? 'text-white font-medium' : 'text-gray-600 hover:text-gray-300'}`}>EN</button>
-            <span className="text-gray-700">/</span>
-            <button onClick={() => setLang('id')} className={`transition-colors ${lang === 'id' ? 'text-white font-medium' : 'text-gray-600 hover:text-gray-300'}`}>ID</button>
+    <>
+      <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 ${scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
+          <div onClick={() => scrollTo('hero')} className="text-sm tracking-[0.2em] uppercase font-light cursor-pointer hover:text-white transition-colors">
+            ZetaGo<span className="text-gold font-semibold">—Aurum</span>
           </div>
           
-          <button 
-            onClick={() => setIsMenuOpen(!isMenuOpen)} 
-            className="md:hidden p-2 -mr-2 text-gray-400 hover:text-white transition-colors z-[70] relative"
-            aria-label="Toggle Menu"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-      </div>
+          {/* Desktop Menu */}
+          <div className="hidden md:flex gap-10 text-xs tracking-[0.3em] uppercase text-gray-400">
+            {Object.entries(currentT.nav).map(([key, label]) => (
+              <button key={key} onClick={() => scrollTo(key)} className="hover:text-white transition-colors">
+                {label}
+              </button>
+            ))}
+          </div>
 
-      {/* Mobile Menu */}
+          {/* Language & Menu Toggle */}
+          <div className="flex items-center gap-6">
+            <div className="hidden md:flex items-center gap-2 text-xs tracking-widest font-light">
+              <Globe className="w-4 h-4 text-gray-400" />
+              <button onClick={() => setLang('en')} className={`transition-colors ${lang === 'en' ? 'text-white font-medium' : 'text-gray-600 hover:text-gray-300'}`}>EN</button>
+              <span className="text-gray-700">/</span>
+              <button onClick={() => setLang('id')} className={`transition-colors ${lang === 'id' ? 'text-white font-medium' : 'text-gray-600 hover:text-gray-300'}`}>ID</button>
+            </div>
+            
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)} 
+              className="md:hidden p-2 -mr-2 text-gray-400 hover:text-white transition-colors z-[120] relative"
+              aria-label="Toggle Menu"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Lightweight Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
             className="fixed inset-0 z-[110] bg-black flex flex-col items-center justify-center gap-12 md:hidden"
           >
             {Object.entries(currentT.nav).map(([key, label]) => (
@@ -94,13 +96,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentT, lang, setLang, scrolled }) =>
               <button onClick={() => setLang('id')} className={lang === 'id' ? 'text-gold' : 'text-gray-600'}>ID</button>
             </div>
             
-            <button onClick={() => setIsMenuOpen(false)} className="absolute top-8 right-6 text-gray-400">
+            <button onClick={() => setIsMenuOpen(false)} className="absolute top-8 right-6 text-gray-400 p-2">
               <X className="w-8 h-8" />
             </button>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 };
 
