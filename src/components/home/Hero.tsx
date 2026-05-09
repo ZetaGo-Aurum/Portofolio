@@ -14,10 +14,10 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
       
       {/* Dynamic Background L2D Placeholders */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-30 mix-blend-screen">
-        {/* Character 1 - Top Left */}
+        {/* Character 1 - Top Left (Now Yuzu Video) */}
         <L2DPlaceholder 
-          image="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1974&auto=format&fit=crop" 
-          name="Hoshino"
+          video="/assets/yuzu_battle.mp4" 
+          name="Yuzu"
           delay={0.2}
           className="absolute -top-[5%] -left-[15%] w-[60vw] h-[40vh] md:top-[10%] md:left-[5%] md:w-[15vw] md:h-[45vh]"
         />
