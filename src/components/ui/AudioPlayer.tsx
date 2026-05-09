@@ -66,7 +66,8 @@ const AudioPlayer: React.FC = () => {
       <audio 
         ref={audioRef} 
         loop 
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" // Placeholder ambient music
+        preload="auto"
+        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
       />
 
       <motion.button
