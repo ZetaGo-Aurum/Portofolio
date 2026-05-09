@@ -43,20 +43,13 @@ export default function App() {
 
   return (
     <div ref={containerRef} className="relative min-h-screen">
-      {/* Ambient Background with Elegant Motif */}
+      {/* Ambient Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[#030303]">
-          {/* Subtle Grid Pattern */}
-          <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px]" />
-          
-          {/* Dynamic Light Orbs */}
-          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_50%_-20%,#3b3b3b,transparent)] animate-pulse" />
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_0%_100%,#D4AF3744,transparent)]" />
-          
-          {/* Noise Texture Overlay */}
-          <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+          <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_50%_-20%,#3b3b3b,transparent)] animate-pulse" />
+          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_0%_100%,#D4AF3744,transparent)]" />
         </div>
-        <div className="absolute inset-0 backdrop-blur-[80px]"></div>
+        <div className="absolute inset-0 backdrop-blur-[100px]"></div>
       </div>
 
       <AudioPlayer />
