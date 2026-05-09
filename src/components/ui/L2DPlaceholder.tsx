@@ -11,8 +11,12 @@ interface L2DPlaceholderProps {
 const L2DPlaceholder: React.FC<L2DPlaceholderProps> = ({ image, name, delay = 0, className = "" }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 0.6, y: 0 }}
+      initial={{ opacity: 0, y: 50, filter: 'grayscale(100%)' }}
+      animate={{ 
+        opacity: 0.6, 
+        y: 0,
+        filter: ['grayscale(100%)', 'grayscale(0%)', 'grayscale(100%)']
+      }}
       whileHover={{ opacity: 1, scale: 1.05, filter: 'grayscale(0%)' }}
       transition={{ 
         delay, 
@@ -22,9 +26,15 @@ const L2DPlaceholder: React.FC<L2DPlaceholderProps> = ({ image, name, delay = 0,
           repeat: Infinity,
           repeatType: "mirror",
           ease: "easeInOut"
+        },
+        filter: {
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: delay + 1
         }
       }}
-      className={`relative group cursor-pointer grayscale overflow-hidden rounded-sm border border-white/10 shadow-2xl ${className}`}
+      className={`relative group cursor-pointer overflow-hidden rounded-sm border border-white/10 shadow-2xl ${className}`}
     >
       <img 
         src={image} 

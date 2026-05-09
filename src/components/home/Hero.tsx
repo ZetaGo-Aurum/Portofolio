@@ -19,31 +19,31 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
           image="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1974&auto=format&fit=crop" 
           name="Hoshino"
           delay={0.2}
-          className="absolute -top-[5%] -left-[15%] w-[60vw] h-[40vh] md:top-[10%] md:left-[5%] md:w-[15vw] md:h-[45vh]"
+          className="absolute -top-[5%] -left-[10%] w-[45vw] h-[30vh] md:top-[10%] md:left-[5%] md:w-[15vw] md:h-[45vh]"
         />
         
-        {/* Character 2 - Top Right */}
+        {/* Character 2 - Top Right (Terakomari Vibe) */}
         <L2DPlaceholder 
           image="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1974&auto=format&fit=crop" 
-          name="Shiroko"
+          name="Terakomari"
           delay={0.5}
-          className="hidden md:block absolute top-[15%] right-[5%] w-[12vw] h-[35vh]"
+          className="absolute top-[10%] -right-[5%] w-[40vw] h-[25vh] md:top-[15%] md:right-[5%] md:w-[12vw] md:h-[35vh]"
         />
         
-        {/* Character 3 - Bottom Left */}
+        {/* Character 3 - Bottom Left (Makima Vibe) */}
         <L2DPlaceholder 
-          image="https://images.unsplash.com/photo-1541562232579-512a21360020?q=80&w=1974&auto=format&fit=crop" 
-          name="Aris"
+          image="https://images.unsplash.com/photo-1601850494422-3cf14624b0b3?q=80&w=2070&auto=format&fit=crop" 
+          name="Makima"
           delay={0.8}
-          className="hidden md:block absolute bottom-[10%] left-[10%] w-[10vw] h-[40vh]"
+          className="absolute bottom-[20%] -left-[5%] w-[35vw] h-[25vh] md:bottom-[10%] md:left-[10%] md:w-[10vw] md:h-[40vh]"
         />
         
-        {/* Character 4 - Bottom Right */}
+        {/* Character 4 - Bottom Right (Yor Vibe) */}
         <L2DPlaceholder 
-          image="https://images.unsplash.com/photo-1612438214708-f428a707dd4e?q=80&w=1974&auto=format&fit=crop" 
-          name="Yuuka"
+          image="https://images.unsplash.com/photo-1613376023733-0d743d44fdad?q=80&w=2070&auto=format&fit=crop" 
+          name="Yor Forger"
           delay={1.1}
-          className="absolute -bottom-[5%] -right-[20%] w-[70vw] h-[45vh] md:bottom-[15%] md:right-[12%] md:w-[14vw] md:h-[50vh]"
+          className="absolute -bottom-[5%] -right-[10%] w-[50vw] h-[35vh] md:bottom-[15%] md:right-[12%] md:w-[14vw] md:h-[50vh]"
         />
       </div>
 
