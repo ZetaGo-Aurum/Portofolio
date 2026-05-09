@@ -19,31 +19,31 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
           image="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1974&auto=format&fit=crop" 
           name="Hoshino"
           delay={0.2}
-          className="absolute -top-[5%] -left-[10%] w-[45vw] h-[30vh] md:top-[10%] md:left-[5%] md:w-[15vw] md:h-[45vh]"
+          className="absolute top-[8%] left-[5%] w-[35vw] h-[25vh] md:top-[12%] md:left-[8%] md:w-[15vw] md:h-[45vh]"
         />
         
-        {/* Character 2 - Top Right (Terakomari Vibe) */}
+        {/* Character 2 - Top Right (Terakomari) */}
         <L2DPlaceholder 
-          image="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1974&auto=format&fit=crop" 
+          image="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=2070&auto=format&fit=crop" 
           name="Terakomari"
           delay={0.5}
-          className="absolute top-[10%] -right-[5%] w-[40vw] h-[25vh] md:top-[15%] md:right-[5%] md:w-[12vw] md:h-[35vh]"
+          className="absolute top-[8%] right-[5%] w-[35vw] h-[25vh] md:top-[15%] md:right-[8%] md:w-[12vw] md:h-[35vh]"
         />
         
-        {/* Character 3 - Bottom Left (Makima Vibe) */}
+        {/* Character 3 - Bottom Left (Estella) */}
+        <L2DPlaceholder 
+          image="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop" 
+          name="Estella"
+          delay={0.8}
+          className="absolute bottom-[10%] left-[5%] w-[35vw] h-[25vh] md:bottom-[12%] md:left-[12%] md:w-[10vw] md:h-[40vh]"
+        />
+        
+        {/* Character 4 - Bottom Right (Terakomari 2) */}
         <L2DPlaceholder 
           image="https://images.unsplash.com/photo-1601850494422-3cf14624b0b3?q=80&w=2070&auto=format&fit=crop" 
-          name="Makima"
-          delay={0.8}
-          className="absolute bottom-[20%] -left-[5%] w-[35vw] h-[25vh] md:bottom-[10%] md:left-[10%] md:w-[10vw] md:h-[40vh]"
-        />
-        
-        {/* Character 4 - Bottom Right (Yor Vibe) */}
-        <L2DPlaceholder 
-          image="https://images.unsplash.com/photo-1613376023733-0d743d44fdad?q=80&w=2070&auto=format&fit=crop" 
-          name="Yor Forger"
+          name="Terakomari"
           delay={1.1}
-          className="absolute -bottom-[5%] -right-[10%] w-[50vw] h-[35vh] md:bottom-[15%] md:right-[12%] md:w-[14vw] md:h-[50vh]"
+          className="absolute bottom-[10%] right-[5%] w-[35vw] h-[25vh] md:bottom-[15%] md:right-[15%] md:w-[14vw] md:h-[50vh]"
         />
       </div>
 
