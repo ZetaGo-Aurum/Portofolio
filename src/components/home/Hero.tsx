@@ -16,16 +16,19 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
     offset: ["start start", "end start"]
   });
 
-  // Parallax effects for characters
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  // Balanced parallax for a "floating window" effect
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -180]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, 180]);
 
   const smoothY1 = useSpring(y1, { stiffness: 100, damping: 30 });
   const smoothY2 = useSpring(y2, { stiffness: 100, damping: 30 });
   const smoothY3 = useSpring(y3, { stiffness: 100, damping: 30 });
   const smoothY4 = useSpring(y4, { stiffness: 100, damping: 30 });
+
+  // Consistent portrait window size
+  const windowClass = "absolute w-[38vw] h-[35vh] md:w-[16vw] md:h-[50vh] overflow-hidden rounded-sm border border-white/10 shadow-2xl bg-black/20 backdrop-blur-sm";
 
   return (
     <section 
@@ -34,10 +37,13 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
       className="relative min-h-screen w-full flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden px-6 z-10"
     >
       
-      {/* Dynamic Background L2D Placeholders with Parallax */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-25 mix-blend-screen">
-        {/* Character 1 - Top Left */}
-        <motion.div style={{ y: smoothY1 }} className="absolute top-[18%] left-[12%] w-[35vw] h-[30vh] md:top-[15%] md:left-[18%] md:w-[20vw] md:h-[55vh]">
+      {/* Dynamic Background Windows in X-Shape */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-30 mix-blend-screen">
+        {/* Top Left Window */}
+        <motion.div 
+          style={{ y: smoothY1 }} 
+          className={`${windowClass} top-[12%] left-[8%] md:top-[10%] md:left-[15%]`}
+        >
           <L2DPlaceholder 
             image="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1974&auto=format&fit=crop" 
             name="Hoshino"
@@ -45,8 +51,11 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
           />
         </motion.div>
         
-        {/* Character 2 - Top Right (Terakomari) */}
-        <motion.div style={{ y: smoothY2 }} className="absolute top-[18%] right-[12%] w-[35vw] h-[30vh] md:top-[18%] md:right-[18%] md:w-[18vw] md:h-[45vh]">
+        {/* Top Right Window */}
+        <motion.div 
+          style={{ y: smoothY2 }} 
+          className={`${windowClass} top-[12%] right-[8%] md:top-[15%] md:right-[15%]`}
+        >
           <L2DPlaceholder 
             image="/hero/Terakomari.Gandesblood.full.4048408.jpg" 
             name="Terakomari"
@@ -54,8 +63,11 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
           />
         </motion.div>
         
-        {/* Character 3 - Bottom Left (Estella) */}
-        <motion.div style={{ y: smoothY3 }} className="absolute bottom-[20%] left-[12%] w-[35vw] h-[30vh] md:bottom-[15%] md:left-[22%] md:w-[15vw] md:h-[50vh]">
+        {/* Bottom Left Window */}
+        <motion.div 
+          style={{ y: smoothY3 }} 
+          className={`${windowClass} bottom-[12%] left-[8%] md:bottom-[15%] md:left-[18%]`}
+        >
           <L2DPlaceholder 
             image="/hero/estella-pointing-at-the-camera-in-arknights-endfield.jpg" 
             name="Estella"
@@ -63,8 +75,11 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
           />
         </motion.div>
         
-        {/* Character 4 - Bottom Right (Terakomari 2) */}
-        <motion.div style={{ y: smoothY4 }} className="absolute bottom-[20%] right-[12%] w-[35vw] h-[30vh] md:bottom-[18%] md:right-[22%] md:w-[18vw] md:h-[55vh]">
+        {/* Bottom Right Window */}
+        <motion.div 
+          style={{ y: smoothY4 }} 
+          className={`${windowClass} bottom-[12%] right-[8%] md:bottom-[10%] md:right-[18%]`}
+        >
           <L2DPlaceholder 
             image="/hero/wallpaperflare.com_wallpaper.jpg" 
             name="Terakomari"
