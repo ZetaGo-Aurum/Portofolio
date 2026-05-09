@@ -13,13 +13,13 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
     <section id="hero" className="relative min-h-screen w-full flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden px-6 z-10">
       
       {/* Dynamic Background L2D Placeholders */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-30 mix-blend-screen">
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-25 mix-blend-screen">
         {/* Character 1 - Top Left */}
         <L2DPlaceholder 
           image="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1974&auto=format&fit=crop" 
           name="Hoshino"
           delay={0.2}
-          className="absolute top-[8%] left-[5%] w-[35vw] h-[25vh] md:top-[12%] md:left-[8%] md:w-[15vw] md:h-[45vh]"
+          className="absolute top-[18%] left-[12%] w-[35vw] h-[30vh] md:top-[15%] md:left-[18%] md:w-[20vw] md:h-[55vh]"
         />
         
         {/* Character 2 - Top Right (Terakomari) */}
@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
           image="/hero/Terakomari.Gandesblood.full.4048408.jpg" 
           name="Terakomari"
           delay={0.5}
-          className="absolute top-[8%] right-[5%] w-[35vw] h-[25vh] md:top-[15%] md:right-[8%] md:w-[12vw] md:h-[35vh]"
+          className="absolute top-[18%] right-[12%] w-[35vw] h-[30vh] md:top-[18%] md:right-[18%] md:w-[18vw] md:h-[45vh]"
         />
         
         {/* Character 3 - Bottom Left (Estella) */}
@@ -35,7 +35,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
           image="/hero/estella-pointing-at-the-camera-in-arknights-endfield.jpg" 
           name="Estella"
           delay={0.8}
-          className="absolute bottom-[10%] left-[5%] w-[35vw] h-[25vh] md:bottom-[12%] md:left-[12%] md:w-[10vw] md:h-[40vh]"
+          className="absolute bottom-[20%] left-[12%] w-[35vw] h-[30vh] md:bottom-[15%] md:left-[22%] md:w-[15vw] md:h-[50vh]"
         />
         
         {/* Character 4 - Bottom Right (Terakomari 2) */}
@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
           image="/hero/wallpaperflare.com_wallpaper.jpg" 
           name="Terakomari"
           delay={1.1}
-          className="absolute bottom-[10%] right-[5%] w-[35vw] h-[25vh] md:bottom-[15%] md:right-[15%] md:w-[14vw] md:h-[50vh]"
+          className="absolute bottom-[20%] right-[12%] w-[35vw] h-[30vh] md:bottom-[18%] md:right-[22%] md:w-[18vw] md:h-[55vh]"
         />
       </div>
 
