@@ -17,18 +17,18 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
   });
 
   // Balanced parallax for a "floating window" effect
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -120]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -180]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, 180]);
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -220]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, 220]);
 
   const smoothY1 = useSpring(y1, { stiffness: 100, damping: 30 });
   const smoothY2 = useSpring(y2, { stiffness: 100, damping: 30 });
   const smoothY3 = useSpring(y3, { stiffness: 100, damping: 30 });
   const smoothY4 = useSpring(y4, { stiffness: 100, damping: 30 });
 
-  // Consistent portrait window size
-  const windowClass = "absolute w-[38vw] h-[35vh] md:w-[16vw] md:h-[50vh] overflow-hidden rounded-sm border border-white/10 shadow-2xl bg-black/20 backdrop-blur-sm";
+  // Strict 9:16 aspect ratio windows
+  const windowClass = "absolute aspect-[9/16] h-[45vh] md:h-[65vh] overflow-hidden rounded-sm border border-white/10 shadow-2xl bg-black/20 backdrop-blur-sm";
 
   return (
     <section 
@@ -38,52 +38,56 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
     >
       
       {/* Dynamic Background Windows in X-Shape */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-30 mix-blend-screen">
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-screen">
         {/* Top Left Window */}
         <motion.div 
           style={{ y: smoothY1 }} 
-          className={`${windowClass} top-[12%] left-[8%] md:top-[10%] md:left-[15%]`}
+          className={`${windowClass} top-[8%] left-[-5%] md:top-[5%] md:left-[10%]`}
         >
           <L2DPlaceholder 
             image="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1974&auto=format&fit=crop" 
             name="Hoshino"
             delay={0.2}
+            className="w-full h-full"
           />
         </motion.div>
         
         {/* Top Right Window */}
         <motion.div 
           style={{ y: smoothY2 }} 
-          className={`${windowClass} top-[12%] right-[8%] md:top-[15%] md:right-[15%]`}
+          className={`${windowClass} top-[5%] right-[-5%] md:top-[10%] md:right-[10%]`}
         >
           <L2DPlaceholder 
             image="/hero/Terakomari.Gandesblood.full.4048408.jpg" 
             name="Terakomari"
             delay={0.5}
+            className="w-full h-full"
           />
         </motion.div>
         
         {/* Bottom Left Window */}
         <motion.div 
           style={{ y: smoothY3 }} 
-          className={`${windowClass} bottom-[12%] left-[8%] md:bottom-[15%] md:left-[18%]`}
+          className={`${windowClass} bottom-[5%] left-[-5%] md:bottom-[10%] md:left-[12%]`}
         >
           <L2DPlaceholder 
             image="/hero/estella-pointing-at-the-camera-in-arknights-endfield.jpg" 
             name="Estella"
             delay={0.8}
+            className="w-full h-full"
           />
         </motion.div>
         
         {/* Bottom Right Window */}
         <motion.div 
           style={{ y: smoothY4 }} 
-          className={`${windowClass} bottom-[12%] right-[8%] md:bottom-[10%] md:right-[18%]`}
+          className={`${windowClass} bottom-[8%] right-[-5%] md:bottom-[5%] md:right-[12%]`}
         >
           <L2DPlaceholder 
             image="/hero/wallpaperflare.com_wallpaper.jpg" 
             name="Terakomari"
             delay={1.1}
+            className="w-full h-full"
           />
         </motion.div>
       </div>

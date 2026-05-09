@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/common/Navbar';
 import Hero from './components/home/Hero';
 import Expertise from './components/home/Expertise';
@@ -7,11 +8,13 @@ import Philosophy from './components/home/Philosophy';
 import Contact from './components/home/Contact';
 import Footer from './components/common/Footer';
 import AudioPlayer from './components/ui/AudioPlayer';
+import SplashScreen from './components/ui/SplashScreen';
 import { translations, Language } from './content/translations';
 
 export default function App() {
   const [lang, setLang] = useState<Language>('en');
   const [scrolled, setScrolled] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const currentT = translations[lang];
@@ -32,38 +35,54 @@ export default function App() {
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    const elements = document.querySelectorAll('.lux-reveal');
-    elements.forEach((el) => observer.observe(el));
+    if (isInitialized) {
+      const elements = document.querySelectorAll('.lux-reveal');
+      elements.forEach((el) => observer.observe(el));
+    }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       observer.disconnect();
     };
-  }, [lang]);
+  }, [lang, isInitialized]);
 
   return (
-    <div ref={containerRef} className="relative min-h-screen">
-      {/* Ambient Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[#030303]">
-          <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_50%_-20%,#3b3b3b,transparent)] animate-pulse" />
-          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_0%_100%,#D4AF3744,transparent)]" />
-        </div>
-        <div className="absolute inset-0 backdrop-blur-[100px]"></div>
-      </div>
+    <div ref={containerRef} className="relative min-h-screen bg-black">
+      <AnimatePresence mode="wait">
+        {!isInitialized ? (
+          <SplashScreen key="splash" onInitialize={() => setIsInitialized(true)} />
+        ) : (
+          <motion.div 
+            key="content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="relative"
+          >
+            {/* Ambient Background */}
+            <div className="fixed inset-0 z-0 pointer-events-none">
+              <div className="absolute inset-0 bg-[#000000]">
+                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_50%_-20%,#3b3b3b,transparent)] animate-pulse" />
+                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_0%_100%,#D4AF3722,transparent)]" />
+              </div>
+              <div className="absolute inset-0 backdrop-blur-[120px]"></div>
+            </div>
 
-      <AudioPlayer />
-      <Navbar currentT={currentT} lang={lang} setLang={setLang} scrolled={scrolled} />
-      
-      <main className="relative z-10">
-        <Hero currentT={currentT} />
-        <Expertise currentT={currentT} />
-        <Projects currentT={currentT} />
-        <Philosophy currentT={currentT} />
-        <Contact currentT={currentT} />
-      </main>
+            <AudioPlayer />
+            <Navbar currentT={currentT} lang={lang} setLang={setLang} scrolled={scrolled} />
+            
+            <main className="relative z-10">
+              <Hero currentT={currentT} />
+              <Expertise currentT={currentT} />
+              <Projects currentT={currentT} />
+              <Philosophy currentT={currentT} />
+              <Contact currentT={currentT} />
+            </main>
 
-      <Footer currentT={currentT} />
+            <Footer currentT={currentT} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
