@@ -14,12 +14,12 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
       
       {/* Dynamic Background L2D Placeholders */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-30 mix-blend-screen">
-        {/* Character 1 - Top Left (Now Yuzu Video) */}
+        {/* Character 1 - Top Left */}
         <L2DPlaceholder 
-          video="/assets/yuzu_battle.mp4" 
-          name="Yuzu"
+          image="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1974&auto=format&fit=crop" 
+          name="Hoshino"
           delay={0.2}
-          className="absolute -top-[5%] -left-[15%] w-[60vw] h-[40vh] md:top-[10%] md:left-[5%] md:w-[15vw] md:h-[45vh]"
+          className="hidden md:block absolute top-[10%] left-[5%] w-[15vw] h-[45vh]"
         />
         
         {/* Character 2 - Top Right */}
@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ currentT }) => {
           image="https://images.unsplash.com/photo-1612438214708-f428a707dd4e?q=80&w=1974&auto=format&fit=crop" 
           name="Yuuka"
           delay={1.1}
-          className="absolute -bottom-[5%] -right-[20%] w-[70vw] h-[45vh] md:bottom-[15%] md:right-[12%] md:w-[14vw] md:h-[50vh]"
+          className="hidden md:block absolute bottom-[15%] right-[12%] w-[14vw] h-[50vh]"
         />
       </div>
 
